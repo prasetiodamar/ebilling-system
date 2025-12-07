@@ -1,0 +1,45 @@
+﻿# Environment
+.env
+.env.local
+.env.*.local
+.DS_Store
+
+# Dependencies
+/node_modules
+/vendor
+/.composer
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# Logs
+*.log
+storage/logs/
+
+# Build
+/dist
+/build
+
+# Testing
+coverage/
+.coverage
+
+# Database
+*.sqlite
+*.sqlite3
+
+# Temporary
+tmp/
+temp/
+*.tmp
+
