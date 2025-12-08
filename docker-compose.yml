@@ -40,6 +40,35 @@ services:
       timeout: 5s
       retries: 5
 
+  # Laravel Backend (PHP-FPM)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ebilling_backend
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./backend:/var/www
+      - ./storage/logs:/var/www/storage/logs
+    environment:
+      - DB_CONNECTION=pgsql
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - REDIS_HOST=redis
+      - REDIS_PASSWORD=null
+      - REDIS_PORT=6379
+    networks:
+      - ebilling_network
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
   # Nginx Web Server
   nginx:
     image: nginx:alpine
