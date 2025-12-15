@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\FtthPopController;
+use App\Http\Controllers\FtthOltController;
+use App\Http\Controllers\FtthOdcController;
+use App\Http\Controllers\FtthOdpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +38,14 @@ Route::middleware(['check.auth'])->group(function () {
     // Pelanggan Routes
     Route::resource('pelanggan', PelangganController::class);
 });
+
+// FTTH Infrastructure Routes
+Route::prefix('ftth')->name('ftth.')->group(function () {
+    Route::resource('pop', FtthPopController::class);
+    Route::resource('olt', FtthOltController::class);
+    Route::resource('odc', FtthOdcController::class);
+    Route::resource('odp', FtthOdpController::class);
+});
+
+
+

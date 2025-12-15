@@ -15,6 +15,42 @@
             </li>
 
             @if(session('role') === 'admin')
+
+            <!-- Infrastruktur FTTH Section -->
+            <li class="nav-item mb-1 mt-3">
+                <small class="text-muted px-3">INFRASTRUKTUR</small>
+            </li>
+
+            <li class="nav-item mb-2">
+                <a href="{{ route('ftth.pop.index') }}" class="nav-link text-white {{ request()->routeIs('ftth.pop.*') ? 'active bg-primary' : '' }}">
+                    <i class="bi bi-building me-2"></i>POP
+                </a>
+            </li>
+
+            <li class="nav-item mb-2">
+                <a href="{{ route('ftth.olt.index') }}" class="nav-link text-white {{ request()->routeIs('ftth.olt.*') ? 'active bg-primary' : '' }}">
+                    <i class="bi bi-router me-2"></i>OLT
+                </a>
+            </li>
+
+            <li class="nav-item mb-2">
+                <a href="{{ route('ftth.odc.index') }}" class="nav-link text-white {{ request()->routeIs('ftth.odc.*') ? 'active bg-primary' : '' }}">
+                    <i class="bi bi-hdd-network me-2"></i>ODC
+                </a>
+            </li>
+
+            <li class="nav-item mb-2">
+                <a href="{{ route('ftth.odp.index') }}" class="nav-link text-white {{ request()->routeIs('ftth.odp.*') ? 'active bg-primary' : '' }}">
+                    <i class="bi bi-diagram-3 me-2"></i>ODP
+                </a>
+            </li>
+
+
+            <!-- Pelanggan & Billing Section -->
+            <li class="nav-item mb-1 mt-3">
+                <small class="text-muted px-3">PELANGGAN & BILLING</small>
+            </li>
+
             <li class="nav-item mb-2">
                 <a href="{{ route('pelanggan.index') }}" class="nav-link text-white {{ request()->routeIs('pelanggan.*') ? 'active bg-primary' : '' }}">
                     <i class="bi bi-people-fill me-2"></i>Pelanggan
@@ -39,16 +75,26 @@
                 </a>
             </li>
 
+            <!-- Monitoring & Support Section -->
+            <li class="nav-item mb-1 mt-3">
+                <small class="text-muted px-3">MONITORING & SUPPORT</small>
+            </li>
+
+            <li class="nav-item mb-2">
+                <a href="#" class="nav-link text-white">
+                    <i class="bi bi-activity me-2"></i>Monitoring PPPoE
+                </a>
+            </li>
+
             <li class="nav-item mb-2">
                 <a href="#" class="nav-link text-white">
                     <i class="bi bi-ticket-detailed me-2"></i>Tiket Support
                 </a>
             </li>
 
-            <li class="nav-item mb-2">
-                <a href="#" class="nav-link text-white">
-                    <i class="bi bi-diagram-3 me-2"></i>Instalasi FTTH
-                </a>
+            <!-- System Section -->
+            <li class="nav-item mb-1 mt-3">
+                <small class="text-muted px-3">SYSTEM</small>
             </li>
 
             <li class="nav-item mb-2">
@@ -80,6 +126,7 @@
     }
     .sidebar-menu {
         flex: 1;
+        overflow-y: auto;
     }
     .nav-link {
         border-radius: 8px;

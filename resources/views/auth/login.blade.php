@@ -56,7 +56,7 @@
                 <h2 class="mb-0">E-Billing System</h2>
                 <p class="mb-0 mt-2 opacity-75">Silakan login untuk melanjutkan</p>
             </div>
-            
+
             <div class="login-body">
                 @if($errors->any())
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -76,12 +76,12 @@
 
                 <form method="POST" action="{{ route('login.post') }}">
                     @csrf
-                    
+
                     <div class="mb-3">
                         <label class="form-label fw-semibold">
                             <i class="bi bi-person-fill text-primary me-2"></i>Username
                         </label>
-                        <input type="text" name="username" class="form-control form-control-lg" 
+                        <input type="text" name="username" class="form-control form-control-lg"
                                placeholder="Masukkan username" value="{{ old('username') }}" required autofocus>
                     </div>
 
@@ -89,7 +89,7 @@
                         <label class="form-label fw-semibold">
                             <i class="bi bi-lock-fill text-primary me-2"></i>Password
                         </label>
-                        <input type="password" name="password" class="form-control form-control-lg" 
+                        <input type="password" name="password" class="form-control form-control-lg"
                                placeholder="Masukkan password" required>
                     </div>
 
